@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Karthik's Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#0b1120;
+  --card:rgba(255,255,255,0.05);
+  --border:rgba(255,255,255,0.2);
+  --accent:#38bdf8;
+}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:#e5e7eb}
+
+/* NAV */
+nav{
+  position:fixed;top:0;width:100%;
+  padding:18px 8%;
+  display:flex;justify-content:space-between;align-items:center;
+  background:rgba(11,17,32,0.9);backdrop-filter:blur(10px);
+  z-index:1000
+}
+nav h2{color:var(--accent)}
+nav ul{display:flex;gap:30px;list-style:none}
+nav ul a{text-decoration:none;color:#e5e7eb;font-weight:500}
+nav ul a:hover, nav ul a.active{color:var(--accent)}
+
+/* SECTIONS */
+section{padding:120px 8%}
+section h2{
+  font-size:2rem;
+  color:var(--accent);
+  margin-bottom:30px;
+}
+
+/* HERO */
+.hero{
+  display:grid;
+  grid-template-columns:1.2fr 1fr;
+  gap:60px;
+  align-items:center;
+  border:2px solid var(--border);
+  border-radius:25px;
+  padding:30px;
+  margin-bottom:50px;
+}
+.hero h1{
+  font-size:3.5rem;
+  background:linear-gradient(90deg,#38bdf8,#a5f3fc);
+  -webkit-background-clip:text;color:transparent
+}
+.hero h3{margin:15px 0;font-weight:400;font-size:1.4rem}
+.hero p{max-width:600px;color:#cbd5f5;line-height:1.6}
+
+.btn{
+  display:inline-block;margin-top:25px;
+  padding:14px 34px;border-radius:30px;
+  background:var(--accent);color:#020617;
+  text-decoration:none;font-weight:600;
+  transition:0.3s;
+}
+.btn:hover{background:#22c1f0;color:#fff}
+
+/* PROFILE IMAGE */
+.profile-img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover; /* fills circle without distortion */
+  border: 6px solid;
+  border-image: linear-gradient(45deg, #38bdf8, #a5f3fc) 1;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+  transition: transform 0.5s;
+  animation: float 4s ease-in-out infinite;
+  margin: 0 auto;
+}
+.profile-img:hover {
+  transform: scale(1.05);
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+/* GLASS CARD */
+.card{
+  background:var(--card);
+  border:2px solid var(--border);
+  border-radius:20px;
+  padding:30px;
+  backdrop-filter:blur(12px);
+  transition:.4s;
+}
+.card:hover{transform:translateY(-10px);border-color:var(--accent)}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;margin-top:30px
+}
+
+/* BIG CARD */
+.card.big{
+  grid-column: span 2;
+}
+
+/* TIMELINE */
+.timeline{
+  display:grid;gap:25px;margin-top:20px
+}
+
+/* PROJECT */
+.project-card{
+  display:grid;gap:15px
+}
+.project-card a{color:var(--accent);text-decoration:none}
+.project-card a:hover{text-decoration:underline}
+
+/* CONTACT */
+.contact a{
+  display:flex;align-items:center;gap:12px;
+  color:var(--accent);text-decoration:none;
+  margin:12px 0;font-weight:500;
+  transition:0.3s;
+}
+.contact a:hover{color:#22c1f0}
+
+footer{
+  text-align:center;padding:25px;
+  border-top:2px solid var(--border);
+  background:#020617
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;gap:40px;text-align:center}
+  .hero h1{font-size:2.6rem}
+  .profile-img{margin:20px auto 0;}
+  .card.big{grid-column:1}
+}
+@media(max-width:500px){
+  nav ul{flex-direction:column;gap:15px;margin-top:10px}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <h2>Karthik's Portfolio</h2>
+  <ul>
+    <li><a href="#home" class="active">Home</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section id="home">
+  <div class="hero">
+    <div>
+      <h1>Karthikey Akavarapu</h1>
+      <h3><span id="typing"></span></h3>
+      <p>
+        Passionate student developer with strong programming fundamentals and a growing focus on
+        full-stack development. I enjoy building clean, responsive applications, contributing to open-source, and continuously learning through internships and projects.
+      </p>
+      <a href="#projects" class="btn">View Projects</a>
+    </div>
+    <!-- Updated hero photo -->
+    <img src="https://lh3.googleusercontent.com/pw/AP1GczM7fAMJZqz11f3u-TgPR19yDvobN_wzrYxX0-eDGR5F0sW9cUPs_m_rA70845vCHFB-McOhIdFAnGA2o6JWu0RUFA_qi-sdwSYJ5fhvI9V-H25sp4vcmE6JcYETT89u0RHqR9uhMdSWv0MsQzB1YI88=w856-h970-s-no-gm?authuser=0" alt="Karthikey Akavarapu Profile Picture" class="profile-img">
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="grid">
+    <div class="card big"><h4><i class="fa-solid fa-code"></i> Frontend Development</h4>
+      <p>HTML, CSS, JavaScript, React.js, Responsive UI, Tailwind CSS</p>
+    </div>
+    <div class="card"><h4><i class="fa-solid fa-terminal"></i> Core Programming</h4>
+      <p>C, C++, Java<br>DSA, OOP, Algorithms</p>
+    </div>
+    <div class="card"><h4><i class="fa-solid fa-toolbox"></i> Tools & Platforms</h4>
+      <p>Git, GitHub, VS Code, Figma, Vercel</p>
+    </div>
+    <div class="card"><h4><i class="fa-solid fa-rocket"></i> Learning</h4>
+      <p>Full Stack Development, APIs, Data Structures, Cloud Basics</p>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <h2>Experience</h2>
+  <div class="timeline">
+    <div class="card big">Microsoft Internship – Exposure to modern dev practices, Agile methodologies, and collaborative coding</div>
+    <div class="card">Future Interns – Skill-based hands-on learning, working on small projects and building problem-solving skills</div>
+    <div class="card">CodeCraft – Improved logic building, clean coding, and algorithm practice</div>
+    <div class="card">Open Source Contributions – Contributed to GitHub repos, bug fixes, and feature development</div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="grid">
+    <div class="card project-card big">
+      <h3>Fit Fusion</h3>
+      <p>
+        Fitness & nutrition platform for gym users offering workouts, food suggestions,
+        protein and calorie tracking to promote healthy living.
+      </p>
+      <p><b>Tech:</b> HTML, CSS, JavaScript</p>
+      <a href="https://fit-fusion-iota.vercel.app/" target="_blank">🔗 Live Project</a>
+    </div>
+    <div class="card project-card">
+      <h3>Portfolio Website</h3>
+      <p>Personal portfolio showcasing projects, skills, and experiences with interactive design.</p>
+      <p><b>Tech:</b> HTML, CSS, JavaScript</p>
+      <a href="#" target="_blank">🔗 Live Project</a>
+    </div>
+    <div class="card project-card">
+      <h3>Task Manager App</h3>
+      <p>A web app to create, update, and track daily tasks with notifications and priorities.</p>
+      <p><b>Tech:</b> React.js, Node.js, MongoDB</p>
+      <a href="#" target="_blank">🔗 Live Project</a>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="contact">
+    <a href="mailto:karthikakavarapuu@gmail.com"><i class="fa-solid fa-envelope"></i>Email</a>
+    <a href="tel:7780680750"><i class="fa-solid fa-phone"></i>+91 7780680750</a>
+    <a href="https://www.linkedin.com/in/karthikey-akavarapu-2b593a313" target="_blank"><i class="fa-brands fa-linkedin"></i>LinkedIn</a>
+    <a href="https://github.com/karthikeyakavarapu" target="_blank"><i class="fa-brands fa-github"></i>GitHub</a>
+  </div>
+</section>
+
+<footer>
+  © 2026 Karthikey Akavarapu
+</footer>
+
+<script>
+// Typing effect
+const text=["Student Developer","Frontend Developer","Aspiring Full Stack Developer"];
+let i=0,j=0,cur="",del=false;
+setInterval(()=>{
+  if(!del && j<=text[i].length){cur=text[i].slice(0,j++);}
+  else if(del && j>=0){cur=text[i].slice(0,j--);}
+  if(j===text[i].length+1)del=true;
+  if(del && j===0){del=false;i=(i+1)%text.length;}
+  document.getElementById("typing").innerText=cur;
+},120);
+</script>
+
+</body>
+</html>
